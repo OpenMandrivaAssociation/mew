@@ -6,8 +6,8 @@
 # - Fix stripping binaries (rpmlint)
 
 %define name mew
-%define version 4.2.53
-%define release 1mdk
+%define version 5.2
+%define release %mkrel 1
 
 Summary: Messaging in the Emacs World
 Name: %{name}
