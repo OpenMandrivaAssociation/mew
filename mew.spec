@@ -18,7 +18,6 @@ Source1: %{name}.el
 License: BSD-like
 Group: Networking/Mail
 Url: http://www.Mew.org/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires: emacs
 Requires: emacs
