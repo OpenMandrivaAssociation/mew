@@ -6,19 +6,18 @@
 # - Fix stripping binaries (rpmlint)
 
 %define name mew
-%define version 5.2
-%define release %mkrel 4
+%define version 6.5
+%define release %mkrel 1
 
 Summary: Messaging in the Emacs World
 Name: %{name}
 Version: %{version}
 Release: %{release}
-Source0: %{name}-%{version}.tar.bz2
+Source0: http://www.mew.org/Release/%{name}-%{version}.tar.gz
 Source1: %{name}.el
 License: BSD-like
 Group: Networking/Mail
 Url: http://www.Mew.org/
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 BuildRequires: emacs
 Requires: emacs
@@ -46,14 +45,10 @@ The features of Mew are as follows:
 %make elispdir=%{_datadir}/emacs/site-lisp/%{name} etcdir=%{_datadir}/pixmaps/mew
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%makeinstall elispdir=$RPM_BUILD_ROOT%{_datadir}/emacs/site-lisp/%{name} etcdir=$RPM_BUILD_ROOT%{_datadir}/pixmaps/mew INSTALLINFO=/sbin/install-info
+%makeinstall elispdir=%{buildroot}%{_datadir}/emacs/site-lisp/%{name} etcdir=%{buildroot}%{_datadir}/pixmaps/mew INSTALLINFO=/sbin/install-info
 
-%__install -dm 755 $RPM_BUILD_ROOT%{_sysconfdir}/emacs/site-start.d
-%__install -pm 644 %{SOURCE1} $RPM_BUILD_ROOT%{_sysconfdir}/emacs/site-start.d
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+%__install -dm 755 %{buildroot}%{_sysconfdir}/emacs/site-start.d
+%__install -pm 644 %{SOURCE1} %{buildroot}%{_sysconfdir}/emacs/site-start.d
 
 %post
 %_install_info %{name}.info
@@ -63,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,0755)
-%doc 00copyright 00readme 00diff 00changes* 00roadmap
+%doc 00copyright 00readme 00diff 00changes*
 %attr(0755,root,root) %{_bindir}/*
 %{_datadir}/emacs/site-lisp/%{name}/*
 %{_datadir}/pixmaps/mew/*
