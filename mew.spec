@@ -50,8 +50,6 @@ The features of Mew are as follows:
 %__install -dm 755 %{buildroot}%{_sysconfdir}/emacs/site-start.d
 %__install -pm 644 %{SOURCE1} %{buildroot}%{_sysconfdir}/emacs/site-start.d
 
-%post
-%_install_info %{name}.info
 
 %preun
 %_remove_install_info %{name}.info
