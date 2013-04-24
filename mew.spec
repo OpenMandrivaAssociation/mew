@@ -7,7 +7,7 @@
 
 %define name mew
 %define version 6.5
-%define release %mkrel 1
+%define release  2
 
 Summary: Messaging in the Emacs World
 Name: %{name}
