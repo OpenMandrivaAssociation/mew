@@ -11,8 +11,8 @@
 
 Summary: Messaging in the Emacs World
 Name: %{name}
-Version: %{version}
-Release: %{release}
+Version: 6.8
+Release: 1%{release}
 Source0: http://www.mew.org/Release/%{name}-%{version}.tar.gz
 Source1: %{name}.el
 License: BSD-like
