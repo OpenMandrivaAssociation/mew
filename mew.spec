@@ -17,7 +17,7 @@ Source0: http://www.mew.org/Release/%{name}-%{version}.tar.gz
 Source1: %{name}.el
 License: BSD-like
 Group: Networking/Mail
-Url: http://www.Mew.org/
+Url: https://www.Mew.org/
 
 BuildRequires: emacs
 Requires: emacs
